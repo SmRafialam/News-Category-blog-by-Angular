@@ -9,7 +9,12 @@ import { Blog } from '../blog'
 })
 export class SiteHeaderComponent {
 
-  lifeStyles:Blog[] = []
+  lifeStyles:Blog[] = [];
+  health:Blog[] = [];
+  family:Blog[] = [];
+  travel:Blog[] = [];
+  work:Blog[] = [];
+
   constructor(private blogService:BlogAPIService){
 
   }
@@ -18,8 +23,48 @@ export class SiteHeaderComponent {
     this.blogService.getNewsList('lifestyle')
                     .subscribe((data:any)=>{
                       console.log(data);
-                      this.lifeStyles = data.articles;
+                      return this.lifeStyles = data.articles;
 
                     })
   }
+
+  getHealth(){
+    // alert("ok");
+    this.blogService.getNewsList('health')
+                .subscribe((data:any)=>{
+                 console.log(data);
+                 return this.health = data.articles;
+
+    })
+  }
+
+  getFamily(){
+    // alert("ok");
+    this.blogService.getNewsList('family')
+                .subscribe((data:any)=>{
+                 console.log(data);
+                 return this.family = data.articles;
+    })
+  }
+
+  getTravel(){
+    //alert("ok");
+    this.blogService.getNewsList('travel')
+    .subscribe((data:any)=>{
+     console.log(data);
+     return this.travel = data.articles;
+})
+  }
+
+  getWork(){
+    //alert("ok");
+    this.blogService.getNewsList('work')
+    .subscribe((data:any)=>{
+     console.log(data);
+     return this.work = data.articles;
+})
+  }
+
+
+
 }
