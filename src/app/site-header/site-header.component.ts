@@ -13,7 +13,7 @@ export class SiteHeaderComponent {
   health:Blog[] = [];
   family:Blog[] = [];
   travel:Blog[] = [];
-  work:Blog[] = [];
+  work  :Blog[] = [];
 
   constructor(private blogService:BlogAPIService){
 
@@ -21,11 +21,11 @@ export class SiteHeaderComponent {
 
   getLifestyle(){
     this.blogService.getNewsList('lifestyle')
-                    .subscribe((data:any)=>{
-                      console.log(data);
-                      return this.lifeStyles = data.articles;
+                  .subscribe((data:any)=>{
+                  console.log(data);
+                  return this.lifeStyles = data.articles;
 
-                    })
+    })
   }
 
   getHealth(){
@@ -34,7 +34,6 @@ export class SiteHeaderComponent {
                 .subscribe((data:any)=>{
                  console.log(data);
                  return this.health = data.articles;
-
     })
   }
 
@@ -42,29 +41,27 @@ export class SiteHeaderComponent {
     // alert("ok");
     this.blogService.getNewsList('family')
                 .subscribe((data:any)=>{
-                 console.log(data);
-                 return this.family = data.articles;
+                console.log(data);
+                return this.family = data.articles;
     })
   }
 
   getTravel(){
     //alert("ok");
     this.blogService.getNewsList('travel')
-    .subscribe((data:any)=>{
-     console.log(data);
-     return this.travel = data.articles;
-})
+              .subscribe((data:any)=>{
+              console.log(data);
+              return this.travel = data.articles;
+    })
   }
 
   getWork(){
     //alert("ok");
     this.blogService.getNewsList('work')
-    .subscribe((data:any)=>{
-     console.log(data);
-     return this.work = data.articles;
-})
+            .subscribe((data:any)=>{
+            console.log(data);
+            return this.work = data.articles;
+    })
   }
-
-
 
 }
