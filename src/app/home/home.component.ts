@@ -15,6 +15,6 @@ export class HomeComponent implements OnInit{
   ngOnInit(): void {
     // main();
     // masonry();
-    //console.log(masonry);
+    // console.log(masonry);
   }
 }
