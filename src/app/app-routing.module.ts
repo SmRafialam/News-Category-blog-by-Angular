@@ -8,12 +8,12 @@ import { TravelComponent } from './home/travel/travel.component';
 import { WorkComponent } from './home/work/work.component';
 
 const routes: Routes = [
-  {path:"home",      component:HomeComponent},
-  {path:"lifestyle", component:LifestyleComponent},
-  {path:"health",    component:HealthComponent},
-  {path:"family",    component:FamilyComponent},
-  {path:"travel",    component:TravelComponent},
-  {path:"work",      component:WorkComponent},
+  // {path:"home",      component:HomeComponent},
+  // {path:"lifestyle", component:LifestyleComponent},
+  // {path:"health",    component:HealthComponent},
+  // {path:"family",    component:FamilyComponent},
+  // {path:"travel",    component:TravelComponent},
+  // {path:"work",      component:WorkComponent},
 ];
 
 @NgModule({
