@@ -1,14 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { BlogAPIService } from '../services/blog-api.service';
 import { Blog } from '../blog'
-import {  Observable, Observer, Subject } from 'rxjs';
+import {  Observable, Observer, Subject, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements OnInit{
+export class HomeComponent implements OnInit,OnDestroy{
+
+  subscription!: Subscription;
 
   newsSelected = new Subject<Blog[]>();
 
@@ -29,11 +31,13 @@ export class HomeComponent implements OnInit{
 
   ngOnInit(): void {
 
+
     //this.customObservable()
 
     console.log('Home component')
 
-    this.blogService.currentCategory$.subscribe((res:string)=> {
+
+    this.subscription = this.blogService.currentCategory$.subscribe((res:string)=> {
       this.categoryName = res;
       console.log(this.categoryName);
       this.blogService.getNewsList(res).subscribe((data:any)=>{
@@ -101,5 +105,10 @@ export class HomeComponent implements OnInit{
     // (err)=> console.log(err),
     // ()=> console.log('completed'));
   }
+
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
+  }
+
 
 }
