@@ -14,6 +14,9 @@ export class AppComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.blogApiService.setCurrentNewsCategory('health')
+    this.blogApiService.setCurrentNewsCategory('health');
+
+
+
   }
 }

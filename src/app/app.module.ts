@@ -7,11 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BlogAPIService } from './services/blog-api.service';
-import { LifestyleComponent } from './home/lifestyle/lifestyle.component';
-import { HealthComponent } from './home/health/health.component';
-import { FamilyComponent } from './home/family/family.component';
-import { TravelComponent } from './home/travel/travel.component';
-import { WorkComponent } from './home/work/work.component';
+
 
 @NgModule({
   declarations: [
@@ -19,11 +15,7 @@ import { WorkComponent } from './home/work/work.component';
     SiteHeaderComponent,
     HomeComponent,
     FooterComponent,
-    LifestyleComponent,
-    HealthComponent,
-    FamilyComponent,
-    TravelComponent,
-    WorkComponent
+
   ],
   imports: [
     BrowserModule,

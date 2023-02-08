@@ -11,8 +11,8 @@ import { Observable, Subject, Subscription } from 'rxjs';
 export class SiteHeaderComponent implements OnInit{
 
 
-    newsSelected = new Subject<Blog[]>();
-    private selectNews!: Subscription;
+   // newsSelected = new Subject<Blog[]>();
+
   // @Output() newsSelected = new EventEmitter<string>();
 
 
@@ -32,7 +32,7 @@ export class SiteHeaderComponent implements OnInit{
     this.blogService.setCurrentNewsCategory(categoryName);
 
     // alert("ok");
-    //  this.blogService.getNewsList(health).subscribe((data:any)=>{
+    //   this.blogService.getNewsList(health).subscribe((data:any)=>{
     //   console.log(data);
     //   this.health = data.articles;
     //   this.lifeStyles = data.articles;

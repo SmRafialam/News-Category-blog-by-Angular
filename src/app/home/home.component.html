@@ -6,24 +6,24 @@
         <h4 class="mb-5"><strong>Latest posts for category {{categoryName}}</strong></h4>
 
         <div class="row">
-          <div class="col-lg-4 col-md-12 mb-4" *ngFor="let ls of lifeStyles">
+          <div class="col-lg-4 col-md-12 mb-4" *ngFor="let cat of categories">
             <div class="card">
               <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                <img src="{{ls.urlToImage}}" class="img-fluid" />
+                <img src="{{cat.urlToImage}}" class="img-fluid" />
                 <a href="#!">
                   <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
                 </a>
               </div>
               <div class="card-body">
-                <h5 class="card-title">{{ls.title}}</h5>
+                <h5 class="card-title">{{cat.title}}</h5>
                 <p class="card-text">
-                  {{ls.description}}
+                  {{cat.description}}
                 </p>
                 <a href="#!" class="btn btn-primary">Read</a>
               </div>
             </div>
           </div>
-          <hr>
+          <!-- <hr>
           <div class="col-lg-4 col-md-12 mb-4" *ngFor="let h of health">
             <div class="card">
               <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
@@ -41,8 +41,8 @@
               </div>
             </div>
           </div>
-          <hr>
-          <div class="col-lg-4 col-md-12 mb-4" *ngFor="let h of health">
+          <hr> -->
+          <!-- <div class="col-lg-4 col-md-12 mb-4" *ngFor="let h of health">
             <div class="card">
               <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
                 <img src="{{h.urlToImage}}" class="img-fluid" />
@@ -58,7 +58,7 @@
                 <a href="#!" class="btn btn-primary">Read</a>
               </div>
             </div>
-          </div>
+          </div> -->
 
           <!-- <div class="col-lg-4 col-md-6 mb-4">
             <div class="card">
@@ -179,4 +179,3 @@
     </div>
   </main>
   <!--Main layout-->
-<router-outlet></router-outlet>
