@@ -43,13 +43,11 @@ export class HomeComponent implements OnInit,OnDestroy{
       this.blogService.getNewsList(res).subscribe((data:any)=>{
         console.log(data);
         this.categories = data.articles;
-
         // this.categoryName = data.articles;
       })
     })
 
     //this.blogService.setCurrentNewsCategory('food');
-
     // this.blogService.getNewsList('categories').subscribe((data:any)=>{
     //   console.log(data);
     //   this.health = data.articles;
@@ -105,6 +103,7 @@ export class HomeComponent implements OnInit,OnDestroy{
     // (err)=> console.log(err),
     // ()=> console.log('completed'));
   }
+
 
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
