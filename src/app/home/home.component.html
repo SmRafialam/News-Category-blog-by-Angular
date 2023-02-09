@@ -6,7 +6,11 @@
         <h4 class="mb-5"><strong>Latest posts for category {{categoryName}}</strong></h4>
 
         <div class="row">
-          <div class="col-lg-4 col-md-12 mb-4" *ngFor="let cat of categories">
+          <div class="col-lg-4 col-md-12 mb-4" *ngFor="let cat of categories | paginate: {
+            itemsPerPage: tableSize,
+            currentPage: page,
+            totalItems: count
+          };">
             <div class="card">
               <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
                 <img src="{{cat.urlToImage}}" class="img-fluid" />
@@ -163,6 +167,20 @@
       <!-- Pagination -->
       <nav class="my-4" aria-label="...">
         <ul class="pagination pagination-circle justify-content-center">
+           <pagination-controls
+              previousLabel="Prev"
+              nextLabel="Next"
+              (pageChange)="onTableDataChange($event)"
+            >
+
+
+          </pagination-controls>
+        </ul>
+      </nav>
+
+
+      <!-- <nav class="my-4" aria-label="...">
+        <ul class="pagination pagination-circle justify-content-center"  (pageChange)="onTableDataChange($event)">
           <li class="page-item">
             <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
           </li>
@@ -175,7 +193,7 @@
             <a class="page-link" href="#">Next</a>
           </li>
         </ul>
-      </nav>
+      </nav> -->
     </div>
   </main>
   <!--Main layout-->

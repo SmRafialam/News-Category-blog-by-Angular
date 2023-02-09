@@ -10,6 +10,12 @@ import {  Observable, Observer, Subject, Subscription } from 'rxjs';
 })
 export class HomeComponent implements OnInit,OnDestroy{
 
+  POSTS: any;
+  page: number = 1;
+  count: number = 0;
+  tableSize: number = 7;
+  tableSizes: any = [3, 6, 9, 12];
+
   subscription!: Subscription;
 
   newsSelected = new Subject<Blog[]>();
@@ -41,6 +47,7 @@ export class HomeComponent implements OnInit,OnDestroy{
       this.categoryName = res;
       console.log(this.categoryName);
       this.blogService.getNewsList(res).subscribe((data:any)=>{
+        this.POSTS = data;
         //console.log(data);
         //this.categories = data.articles;
         // this.categoryName = data.articles;
@@ -51,8 +58,6 @@ export class HomeComponent implements OnInit,OnDestroy{
         console.log(this.title);
       })
     })
-
-
 
     //this.blogService.setCurrentNewsCategory('food');
     // this.blogService.getNewsList('categories').subscribe((data:any)=>{
@@ -109,6 +114,12 @@ export class HomeComponent implements OnInit,OnDestroy{
     // },
     // (err)=> console.log(err),
     // ()=> console.log('completed'));
+  }
+
+  onTableDataChange(event: any) {
+    //alert("ok");
+    this.page = event;
+    this.subscription;
   }
 
 
