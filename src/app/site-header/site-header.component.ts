@@ -10,13 +10,16 @@ import { Observable, Subject, Subscription } from 'rxjs';
 })
 export class SiteHeaderComponent implements OnInit{
 
-
+  title:any;
    // newsSelected = new Subject<Blog[]>();
 
   // @Output() newsSelected = new EventEmitter<string>();
 
 
-  categories!: Observable<any[]>;;
+  // categories!: Observable<Blog[]>;
+  categories: Blog[] = [];
+
+
   lifeStyles:Blog[] = [];
   health:    Blog[] = [];
   family:    Blog[] = [];
@@ -41,6 +44,30 @@ export class SiteHeaderComponent implements OnInit{
     //   this.work = data.articles;
     //   this.newsSelected.next(data);
     //  });
+    }
+    search(){
+      //alert("OK");
+      if(this.title == ""){
+        this.onSelectNews('categoryName');
+      }else{
+       // this.categories = this.blogService.
+       this.blogService.setCurrentNewsCategory(this.title);
+
+      //  this.blogService.currentCategory$.subscribe((res:string)=> {
+      //     this.blogService.getNewsList(res).subscribe((data:any)=>{
+      //       console.log(data);
+      //       this.categories = data.articles;
+
+      //       // this.categoryName = data.articles;
+      //     })
+      //   })
+
+        // this.categories = this.categories.filter((res)=>{
+        //   return res.title.match(this.title);
+        // })
+        // console.log(this.title);
+
+      }
     }
 
   ngOnInit(): void {

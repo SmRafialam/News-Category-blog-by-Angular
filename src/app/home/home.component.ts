@@ -18,7 +18,7 @@ export class HomeComponent implements OnInit,OnDestroy{
   categories: Blog[] = [];
 
   //categories !: Observable<any[]>;
-
+  title:any;
   lifeStyles:Blog[] = [];
   health:    Blog[] = [];
   family:    Blog[] = [];
@@ -41,11 +41,18 @@ export class HomeComponent implements OnInit,OnDestroy{
       this.categoryName = res;
       console.log(this.categoryName);
       this.blogService.getNewsList(res).subscribe((data:any)=>{
-        console.log(data);
-        this.categories = data.articles;
+        //console.log(data);
+        //this.categories = data.articles;
         // this.categoryName = data.articles;
+        this.categories = data.articles.filter((res:any)=>{
+          console.log(res)
+          return res.title.match(this.title);
+        })
+        console.log(this.title);
       })
     })
+
+
 
     //this.blogService.setCurrentNewsCategory('food');
     // this.blogService.getNewsList('categories').subscribe((data:any)=>{

@@ -14,6 +14,7 @@ export class BlogAPIService {
    }
 
    getNewsList(newsType:string): Observable<any>{
+
     const url = `https://newsapi.org/v2/everything?q=${newsType}&from=2023-01-09&sortBy=publishedAt&apiKey=de22d657d2bd45349e56be3e5ab958b0`;
     return this.http.get(url);
 
