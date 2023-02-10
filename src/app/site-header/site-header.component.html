@@ -92,6 +92,7 @@
               placeholder="Enter Title"
               aria-label="Search"
               [(ngModel)]="title"
+              (ngModelChange)="search()"
             />
             <button
               class="btn btn-outline-primary"
