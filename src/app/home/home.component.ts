@@ -48,7 +48,7 @@ export class HomeComponent implements OnInit,OnDestroy{
       console.log(this.categoryName);
       this.blogService.getNewsList(res).subscribe((data:any)=>{
         this.POSTS = data;
-        //console.log(data);
+        console.log(data);
         //this.categories = data.articles;
         // this.categoryName = data.articles;
         this.categories = data.articles.filter((res:any)=>{
